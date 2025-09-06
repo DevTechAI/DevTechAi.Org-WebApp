@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favicon Generator for DevTechAi.Org</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .instructions {
+            background: #e8f4fd;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .step {
+            margin: 15px 0;
+            padding: 10px;
+            background: #f9f9f9;
+            border-left: 4px solid #007bff;
+        }
+        .code {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 4px;
+            font-family: monospace;
+            margin: 10px 0;
+        }
+        .note {
+            background: #fff3cd;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #ffc107;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 DevTechAi.Org Favicon Setup</h1>
+        
+        <div class="instructions">
+            <h2>📋 Instructions to Set Up Your Favicon</h2>
+            
+            <div class="step">
+                <h3>Step 1: Convert Your Logo to Favicon Format</h3>
+                <p>Use an online favicon generator to convert your <code>devtechai-logo.png</code> to favicon format:</p>
+                <ul>
+                    <li>Visit: <a href="https://favicon.io/favicon-converter/" target="_blank">favicon.io/favicon-converter/</a></li>
+                    <li>Upload your <code>devtechai-logo.png</code> file</li>
+                    <li>Download the generated favicon package</li>
+                </ul>
+            </div>
+            
+            <div class="step">
+                <h3>Step 2: Add Files to Public Directory</h3>
+                <p>Place these files in your <code>public/</code> directory:</p>
+                <div class="code">
+                    public/<br>
+                    ├── favicon.ico<br>
+                    ├── favicon-16x16.png<br>
+                    ├── favicon-32x32.png<br>
+                    ├── apple-touch-icon.png<br>
+                    └── devtechai-logo.png (already exists)
+                </div>
+            </div>
+            
+            <div class="step">
+                <h3>Step 3: Update Layout Configuration</h3>
+                <p>The layout.tsx file has been updated with favicon configuration. If you want to use specific favicon files, update it to:</p>
+                <div class="code">
+                    icons: {<br>
+                    &nbsp;&nbsp;icon: '/favicon.ico',<br>
+                    &nbsp;&nbsp;shortcut: '/favicon-16x16.png',<br>
+                    &nbsp;&nbsp;apple: '/apple-touch-icon.png',<br>
+                    },
+                </div>
+            </div>
+            
+            <div class="step">
+                <h3>Step 4: Test Your Favicon</h3>
+                <p>After adding the files:</p>
+                <ul>
+                    <li>Restart your development server</li>
+                    <li>Open your website in a browser</li>
+                    <li>Check the browser tab for your DevTechAi logo</li>
+                    <li>Test on mobile devices for Apple touch icon</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="note">
+            <h3>💡 Current Status</h3>
+            <p><strong>✅ Layout.tsx Updated:</strong> Favicon configuration added to metadata</p>
+            <p><strong>✅ Logo Available:</strong> devtechai-logo.png exists in public directory</p>
+            <p><strong>⏳ Next Step:</strong> Generate favicon files from your logo</p>
+        </div>
+        
+        <div class="instructions">
+            <h2>🎨 Alternative: Quick Favicon Creation</h2>
+            <p>If you want a quick solution, you can also:</p>
+            <ol>
+                <li>Copy your <code>devtechai-logo.png</code></li>
+                <li>Rename it to <code>favicon.ico</code></li>
+                <li>Place it in the <code>public/</code> directory</li>
+                <li>Update the layout.tsx icon path to <code>'/favicon.ico'</code></li>
+            </ol>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+{
+  "redirects": [
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "devtechai.org"
+        }
+      ],
+      "destination": "https://www.devtechai.org/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "scheme",
+          "value": "http"
+        }
+      ],
+      "destination": "https://www.devtechai.org/",
+      "permanent": true
+    }
+  ]
+}
