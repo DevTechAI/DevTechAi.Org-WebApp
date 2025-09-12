@@ -49,13 +49,17 @@ export default function Navigation({ activeSection, onScrollToSection }: Navigat
         <div className="flex justify-between items-center h-16">
           <Link href="/" className="flex items-center space-x-2 transform hover:scale-105 transition-transform duration-300">
             <Image 
-              src="/devtechai-logo.png" 
+              src="/Logo.png" 
               alt="DevTechAi.Org Logo" 
-              width={32} 
-              height={32}
-              className="h-8 w-8"
+              width={36} 
+              height={28}
+              className="h-14 w-14 object-contain relative z-10"
+              style={{ 
+               filter: 'drop-shadow(0 0 10px #ffffffff) drop-shadow(0 0 5px #c1f9ffff)' 
+          }}
               priority
             />
+            
             <span className="text-xl font-bold text-white/90">DevTechAi.Org</span>
           </Link>
           
