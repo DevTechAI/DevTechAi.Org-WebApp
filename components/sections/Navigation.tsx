@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Brain, Menu, X, ChevronDown } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import Marquee from "react-fast-marquee";
 
 interface NavigationProps {
   activeSection: string;
@@ -45,6 +46,14 @@ export default function Navigation({ activeSection, onScrollToSection }: Navigat
 
   return (
     <nav className="fixed top-0 w-full bg-black/20 backdrop-blur-2xl border-b border-white/10 shadow-2xl shadow-black/20 z-50">
+      {/* Top banner */}
+      <div className="bg-slate-900 text-white py-2 text-center text-sm font-semibold">
+        <Marquee>
+                    ⚠️ Mobile version is facing compatibility issues with iPhone, kindly use android or Mac/Windows PCs for better view ⚠️
+
+        </Marquee>
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Link href="/" className="flex items-center space-x-2 transform hover:scale-105 transition-transform duration-300">
