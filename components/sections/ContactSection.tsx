@@ -26,50 +26,66 @@ const contactInfo = [
 const teamMembers = [
   {
     id: 1,
-    name: "Dr. Sarah Chen",
+    name: "Khalid",
     role: "Chief AI Officer",
     image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face",
-    profileUrl: "https://linkedin.com/in/sarah-chen-ai",
+    profileUrl: "https://www.linkedin.com/in/md-khalid-b3898a22b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     description: "Leading AI research and innovation"
   },
   {
     id: 2,
-    name: "Michael Rodriguez",
+    name: "Sanjana",
     role: "Head of Engineering",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
-    profileUrl: "https://linkedin.com/in/michael-rodriguez-eng",
+    image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face",
+    profileUrl: "https://www.linkedin.com/in/sanjana-gunda27/",
     description: "Building scalable AI solutions"
   },
   {
     id: 3,
-    name: "Priya Sharma",
+    name: "Adithya",
     role: "Data Science Lead",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
-    profileUrl: "https://linkedin.com/in/priya-sharma-data",
+    image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face",
+    profileUrl: "http://linkedin.com/in/y-adithya1617",
     description: "Transforming data into insights"
   },
   {
     id: 4,
-    name: "David Kim",
+    name: "Sanskriti",
     role: "Product Manager",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
-    profileUrl: "https://linkedin.com/in/david-kim-product",
+    image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face",
+    profileUrl: "https://linkedin.com/in/sanskriti-sonee-749509266",
     description: "Driving product strategy and growth"
   },
   {
     id: 5,
-    name: "Lisa Thompson",
+    name: "Yashasri",
     role: "UX Design Director",
-    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&crop=face",
-    profileUrl: "https://linkedin.com/in/lisa-thompson-ux",
+    image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face",
+    profileUrl: "https://www.linkedin.com/in/gyashasri341?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     description: "Creating intuitive AI experiences"
   },
   {
     id: 6,
-    name: "Sixth Thompson",
-    role: "UX Design Director",
-    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&crop=face",
-    profileUrl: "https://linkedin.com/in/lisa-thompson-ux",
+    name: "Selva",
+    role: "AI Researcher",
+    image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face",
+    profileUrl: "https://www.linkedin.com/in/selvarathinam-g-66863b298?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    description: "Creating intuitive AI experiences"
+  },
+  {
+    id: 7,
+    name: "Tharani",
+    role: "AI Developer",
+    image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face",
+    profileUrl: "https://www.linkedin.com/in/tharanidharane-v-59b864290?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    description: "Creating intuitive AI experiences"
+  },
+  {
+    id: 8,
+    name: "Ramya",
+    role: "AI Analyst",
+    image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face",
+    profileUrl: "https://www.linkedin.com/in/ramya-reddy-28419028a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
     description: "Creating intuitive AI experiences"
   }
 ];
@@ -205,7 +221,7 @@ export default function ContactSection() {
             <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-purple-100 transform hover:scale-105 hover:shadow-lg transition-all duration-500">
               <div className="rounded-lg overflow-hidden shadow-lg">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.1234567890123!2d78.3744!3d17.4478!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb91b5c5c5c5c5%3A0x5c5c5c5c5c5c5c5c!2sHitech%20City%2C%20Hyderabad%2C%20Telangana!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.1234567890123!2d78.3744!3d17.4478!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb91b5c5c5c5c5%3A0x5c5c5c5c5c5c5c5!2sHitech%20City%2C%20Hyderabad%2C%20Telangana!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin"
                   width="100%"
                   height="250"
                   style={{ border: 0 }}

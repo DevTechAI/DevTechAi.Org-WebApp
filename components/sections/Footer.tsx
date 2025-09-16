@@ -42,9 +42,9 @@ export default function Footer() {
         <Image 
           src="/Logo.png" 
           alt="DevTechAi.Org Logo" 
-          width={36} 
-          height={28}
-          className="h-14 w-14 object-contain relative z-10"
+          width={90} 
+          height={70}
+          className="h-22 w-22 object-contain relative z-10"
           style={{ 
             filter: 'drop-shadow(0 0 10px #ffffffff) drop-shadow(0 0 5px #c1f9ffff)' 
           }}

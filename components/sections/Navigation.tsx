@@ -51,9 +51,9 @@ export default function Navigation({ activeSection, onScrollToSection }: Navigat
             <Image 
               src="/Logo.png" 
               alt="DevTechAi.Org Logo" 
-              width={36} 
-              height={28}
-              className="h-14 w-14 object-contain relative z-10"
+              width={75} 
+              height={55}
+              className="h-17 w-17 object-contain relative z-10"
               style={{ 
                filter: 'drop-shadow(0 0 10px #ffffffff) drop-shadow(0 0 5px #c1f9ffff)' 
           }}
