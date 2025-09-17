@@ -6,6 +6,7 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --navigation-height: 64px; /* Default navigation height */
 }
 
 @media (prefers-color-scheme: dark) {
@@ -78,5 +79,17 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .pt-nav {
+    padding-top: var(--navigation-height);
+  }
+  .pt-nav-lg {
+    padding-top: calc(var(--navigation-height) + 2rem);
+  }
+  .pt-nav-xl {
+    padding-top: calc(var(--navigation-height) + 4rem);
   }
 }

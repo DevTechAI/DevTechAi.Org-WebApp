@@ -121,314 +121,309 @@ export default function ComputerVisionPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 via-blue-50 to-purple-50">
-      <Navigation 
-        activeSection="services" 
-        onScrollToSection={() => {}} 
-      />
-      
-      {/* Hero Section */}
-      <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-green-200/30 to-blue-200/30 rounded-full blur-xl animate-pulse" />
-          <div className="absolute top-40 right-20 w-24 h-24 bg-gradient-to-br from-purple-200/30 to-green-200/30 rounded-full blur-lg animate-pulse" />
-        </div>
-
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center space-y-8">
-            <div className="space-y-4">
-              <Badge className="bg-green-100 text-green-700 hover:bg-green-200 transform hover:scale-105 transition-all duration-300">
-                <Eye className="w-4 h-4 mr-1" />
-                Computer Vision Solutions
-              </Badge>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-                See Beyond the{' '}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-blue-600">
-                  Visible
-                </span>
-              </h1>
-              <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
-                Transform visual data into actionable insights with our advanced computer vision solutions. 
-                From object detection to medical imaging, we help machines see and understand the world.
-              </p>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                size="lg" 
-                className="bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-white px-8 py-3 transform hover:scale-105 hover:shadow-lg transition-all duration-300"
-                onClick={() => setShowContactDialog(true)}
-              >
-                Explore CV Solutions
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="border-green-200 text-green-700 hover:bg-green-50 px-8 py-3 transform hover:scale-105 hover:shadow-lg transition-all duration-300"
-                onClick={() => document.getElementById('solutions')?.scrollIntoView({ behavior: 'smooth' })}
-              >
-                View Solutions
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Solutions Section */}
-      <section id="solutions" className="py-16 px-4 sm:px-6 lg:px-8 bg-white/50 relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-10 right-10 w-40 h-40 bg-gradient-to-br from-green-200/20 to-blue-200/20 rounded-full blur-2xl animate-pulse" />
-          <div className="absolute bottom-10 left-10 w-32 h-32 bg-gradient-to-br from-purple-200/20 to-green-200/20 rounded-full blur-xl animate-pulse" />
-        </div>
-
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center space-y-4 mb-16">
-            <Badge className="bg-green-100 text-green-700 hover:bg-green-200 transform hover:scale-105 transition-all duration-300">
-              CV Solutions
-            </Badge>
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
-              Advanced Computer Vision Services
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              From object detection to medical imaging, our computer vision solutions provide 
-              accurate, real-time visual analysis for diverse applications.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {cvSolutions.map((solution, index) => (
-              <Card 
-                key={index} 
-                className="group hover:shadow-xl transition-all duration-500 hover:-translate-y-4 hover:rotate-1 border-0 bg-gradient-to-br from-white to-gray-50"
-              >
-                <CardHeader>
-                  <div className="w-12 h-12 bg-gradient-to-br from-green-100 to-blue-100 rounded-lg flex items-center justify-center mb-4 group-hover:scale-125 group-hover:rotate-12 transition-all duration-500">
-                    <solution.icon className="h-6 w-6 text-green-600" />
-                  </div>
-                  <CardTitle className="text-xl text-gray-900 group-hover:text-green-700 transition-colors duration-300">
-                    {solution.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-gray-600 leading-relaxed mb-4">
-                    {solution.description}
-                  </CardDescription>
-                  <div className="space-y-2">
-                    <h4 className="text-sm font-semibold text-gray-900">Key Benefits:</h4>
-                    <ul className="space-y-1">
-                      {solution.benefits.map((benefit, i) => (
-                        <li key={i} className="flex items-center text-sm text-gray-600">
-                          <CheckCircle className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
-                          {benefit}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Industries Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-20 left-1/4 w-36 h-36 bg-gradient-to-br from-green-200/20 to-blue-200/20 rounded-full blur-2xl animate-pulse" />
-          <div className="absolute bottom-20 right-1/4 w-28 h-28 bg-gradient-to-br from-purple-200/20 to-green-200/20 rounded-full blur-xl animate-pulse" />
-        </div>
-
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center space-y-4 mb-16">
-            <Badge className="bg-blue-100 text-blue-700 hover:bg-blue-200 transform hover:scale-105 transition-all duration-300">
-              Industries We Serve
-            </Badge>
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
-              Transforming Industries with Computer Vision
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Our computer vision solutions are revolutionizing operations across various industries, 
-              from manufacturing to healthcare.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {industries.map((industry, index) => (
-              <Card 
-                key={index} 
-                className="group hover:shadow-xl transition-all duration-500 hover:-translate-y-2 hover:rotate-1 border-0 bg-gradient-to-br from-white to-gray-50"
-              >
-                <CardHeader>
-                  <div className="text-4xl mb-4 group-hover:scale-125 transition-transform duration-300">
-                    {industry.icon}
-                  </div>
-                  <CardTitle className="text-xl text-gray-900 group-hover:text-green-700 transition-colors duration-300">
-                    {industry.name}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-gray-600 leading-relaxed mb-4">
-                    {industry.description}
-                  </CardDescription>
-                  <div className="space-y-2">
-                    <h4 className="text-sm font-semibold text-gray-900">Key Applications:</h4>
-                    <ul className="space-y-1">
-                      {industry.features.map((feature, i) => (
-                        <li key={i} className="flex items-center text-sm text-gray-600">
-                          <CheckCircle className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Technology Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-green-50 to-blue-50 relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-10 right-10 w-40 h-40 bg-gradient-to-br from-green-200/20 to-blue-200/20 rounded-full blur-2xl animate-pulse" />
-          <div className="absolute bottom-10 left-10 w-32 h-32 bg-gradient-to-br from-purple-200/20 to-green-200/20 rounded-full blur-xl animate-pulse" />
-        </div>
-
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center space-y-4 mb-16">
-            <Badge className="bg-purple-100 text-purple-700 hover:bg-purple-200 transform hover:scale-105 transition-all duration-300">
-              Our Technology
-            </Badge>
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
-              Advanced Computer Vision Technologies
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We leverage cutting-edge computer vision technologies and deep learning models 
-              to deliver accurate, real-time visual analysis solutions.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                title: "Deep Learning Models",
-                description: "CNN, R-CNN, YOLO, and custom neural networks for object detection and classification",
-                icon: Brain
-              },
-              {
-                title: "Image Processing",
-                description: "Advanced algorithms for image enhancement, filtering, and feature extraction",
-                icon: Image
-              },
-              {
-                title: "Real-time Processing",
-                description: "Optimized systems for live video analysis and instant decision making",
-                icon: Zap
-              },
-              {
-                title: "Edge Computing",
-                description: "Deploy computer vision models on edge devices for low-latency applications",
-                icon: Monitor
-              }
-            ].map((tech, index) => (
-              <div key={index} className="text-center space-y-4 group transform hover:scale-105 transition-all duration-300">
-                <div className="w-16 h-16 bg-gradient-to-br from-green-100 to-blue-100 rounded-full flex items-center justify-center mx-auto group-hover:scale-125 group-hover:rotate-12 transition-all duration-500">
-                  <tech.icon className="h-8 w-8 text-green-600" />
+    <div className="bg-white text-gray-800">
+      <Navigation activeSection="services" onScrollToSection={() => {}} />
+      <main className="pt-nav">
+        <div className="relative bg-gradient-to-b from-green-50 to-white pt-12 pb-16 text-center">
+          <div className="max-w-4xl mx-auto px-4">
+            {/* Hero Section */}
+            <section className="pb-16">
+              <div className="space-y-8">
+                <div className="space-y-4">
+                  <Badge className="bg-green-100 text-green-700 hover:bg-green-200 transform hover:scale-105 transition-all duration-300">
+                    <Eye className="w-4 h-4 mr-1" />
+                    Computer Vision Solutions
+                  </Badge>
+                  <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+                    See Beyond the{' '}
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-blue-600">
+                      Visible
+                    </span>
+                  </h1>
+                  <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
+                    Transform visual data into actionable insights with our advanced computer vision solutions. 
+                    From object detection to medical imaging, we help machines see and understand the world.
+                  </p>
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900">{tech.title}</h3>
-                <p className="text-gray-600">{tech.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Process Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-20 left-1/4 w-36 h-36 bg-gradient-to-br from-green-200/20 to-blue-200/20 rounded-full blur-2xl animate-pulse" />
-          <div className="absolute bottom-20 right-1/4 w-28 h-28 bg-gradient-to-br from-purple-200/20 to-green-200/20 rounded-full blur-xl animate-pulse" />
-        </div>
-
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center space-y-4 mb-16">
-            <Badge className="bg-blue-100 text-blue-700 hover:bg-blue-200 transform hover:scale-105 transition-all duration-300">
-              Our Process
-            </Badge>
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
-              How We Build Your Computer Vision Solution
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Our systematic approach ensures successful computer vision implementation 
-              tailored to your specific visual analysis needs.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                step: "01",
-                title: "Visual Analysis",
-                description: "We analyze your visual data requirements and define computer vision objectives.",
-                icon: Eye
-              },
-              {
-                step: "02", 
-                title: "Data Collection",
-                description: "We gather and prepare image/video datasets for model training and validation.",
-                icon: Camera
-              },
-              {
-                step: "03",
-                title: "Model Development",
-                description: "We develop, train, and optimize computer vision models for your specific use case.",
-                icon: Brain
-              },
-              {
-                step: "04",
-                title: "Deployment & Integration",
-                description: "We deploy your CV solution and integrate it with your existing systems.",
-                icon: Zap
-              }
-            ].map((phase, index) => (
-              <div key={index} className="text-center space-y-4 group transform hover:scale-105 transition-all duration-300">
-                <div className="w-16 h-16 bg-gradient-to-br from-green-100 to-blue-100 rounded-full flex items-center justify-center mx-auto group-hover:scale-125 group-hover:rotate-12 transition-all duration-500">
-                  <phase.icon className="h-8 w-8 text-green-600" />
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Button 
+                    size="lg" 
+                    className="bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-white px-8 py-3 transform hover:scale-105 hover:shadow-lg transition-all duration-300"
+                    onClick={() => setShowContactDialog(true)}
+                  >
+                    Explore CV Solutions
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Button>
+                  <Button 
+                    size="lg" 
+                    variant="outline" 
+                    className="border-green-200 text-green-700 hover:bg-green-50 px-8 py-3 transform hover:scale-105 hover:shadow-lg transition-all duration-300"
+                    onClick={() => document.getElementById('solutions')?.scrollIntoView({ behavior: 'smooth' })}
+                  >
+                    View Solutions
+                  </Button>
                 </div>
-                <div className="text-2xl font-bold text-green-600">{phase.step}</div>
-                <h3 className="text-xl font-semibold text-gray-900">{phase.title}</h3>
-                <p className="text-gray-600">{phase.description}</p>
               </div>
-            ))}
+            </section>
+
+            {/* Solutions Section */}
+            <section id="solutions" className="py-16 px-4 sm:px-6 lg:px-8 bg-white/50 relative overflow-hidden">
+              <div className="absolute inset-0 pointer-events-none">
+                <div className="absolute top-10 right-10 w-40 h-40 bg-gradient-to-br from-green-200/20 to-blue-200/20 rounded-full blur-2xl animate-pulse" />
+                <div className="absolute bottom-10 left-10 w-32 h-32 bg-gradient-to-br from-purple-200/20 to-green-200/20 rounded-full blur-xl animate-pulse" />
+              </div>
+
+              <div className="max-w-7xl mx-auto relative z-10">
+                <div className="text-center space-y-4 mb-16">
+                  <Badge className="bg-green-100 text-green-700 hover:bg-green-200 transform hover:scale-105 transition-all duration-300">
+                    CV Solutions
+                  </Badge>
+                  <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
+                    Advanced Computer Vision Services
+                  </h2>
+                  <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                    From object detection to medical imaging, our computer vision solutions provide 
+                    accurate, real-time visual analysis for diverse applications.
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {cvSolutions.map((solution, index) => (
+                    <Card 
+                      key={index} 
+                      className="group hover:shadow-xl transition-all duration-500 hover:-translate-y-4 hover:rotate-1 border-0 bg-gradient-to-br from-white to-gray-50"
+                    >
+                      <CardHeader>
+                        <div className="w-12 h-12 bg-gradient-to-br from-green-100 to-blue-100 rounded-lg flex items-center justify-center mb-4 group-hover:scale-125 group-hover:rotate-12 transition-all duration-500">
+                          <solution.icon className="h-6 w-6 text-green-600" />
+                        </div>
+                        <CardTitle className="text-xl text-gray-900 group-hover:text-green-700 transition-colors duration-300">
+                          {solution.title}
+                        </CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        <CardDescription className="text-gray-600 leading-relaxed mb-4">
+                          {solution.description}
+                        </CardDescription>
+                        <div className="space-y-2">
+                          <h4 className="text-sm font-semibold text-gray-900">Key Benefits:</h4>
+                          <ul className="space-y-1">
+                            {solution.benefits.map((benefit, i) => (
+                              <li key={i} className="flex items-center text-sm text-gray-600">
+                                <CheckCircle className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
+                                {benefit}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* Industries Section */}
+            <section className="py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+              <div className="absolute inset-0 pointer-events-none">
+                <div className="absolute top-20 left-1/4 w-36 h-36 bg-gradient-to-br from-green-200/20 to-blue-200/20 rounded-full blur-2xl animate-pulse" />
+                <div className="absolute bottom-20 right-1/4 w-28 h-28 bg-gradient-to-br from-purple-200/20 to-green-200/20 rounded-full blur-xl animate-pulse" />
+              </div>
+
+              <div className="max-w-7xl mx-auto relative z-10">
+                <div className="text-center space-y-4 mb-16">
+                  <Badge className="bg-blue-100 text-blue-700 hover:bg-blue-200 transform hover:scale-105 transition-all duration-300">
+                    Industries We Serve
+                  </Badge>
+                  <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
+                    Transforming Industries with Computer Vision
+                  </h2>
+                  <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Our computer vision solutions are revolutionizing operations across various industries, 
+                    from manufacturing to healthcare.
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {industries.map((industry, index) => (
+                    <Card 
+                      key={index} 
+                      className="group hover:shadow-xl transition-all duration-500 hover:-translate-y-2 hover:rotate-1 border-0 bg-gradient-to-br from-white to-gray-50"
+                    >
+                      <CardHeader>
+                        <div className="text-4xl mb-4 group-hover:scale-125 transition-transform duration-300">
+                          {industry.icon}
+                        </div>
+                        <CardTitle className="text-xl text-gray-900 group-hover:text-green-700 transition-colors duration-300">
+                          {industry.name}
+                        </CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        <CardDescription className="text-gray-600 leading-relaxed mb-4">
+                          {industry.description}
+                        </CardDescription>
+                        <div className="space-y-2">
+                          <h4 className="text-sm font-semibold text-gray-900">Key Applications:</h4>
+                          <ul className="space-y-1">
+                            {industry.features.map((feature, i) => (
+                              <li key={i} className="flex items-center text-sm text-gray-600">
+                                <CheckCircle className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
+                                {feature}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* Technology Section */}
+            <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-green-50 to-blue-50 relative overflow-hidden">
+              <div className="absolute inset-0 pointer-events-none">
+                <div className="absolute top-10 right-10 w-40 h-40 bg-gradient-to-br from-green-200/20 to-blue-200/20 rounded-full blur-2xl animate-pulse" />
+                <div className="absolute bottom-10 left-10 w-32 h-32 bg-gradient-to-br from-purple-200/20 to-green-200/20 rounded-full blur-xl animate-pulse" />
+              </div>
+
+              <div className="max-w-7xl mx-auto relative z-10">
+                <div className="text-center space-y-4 mb-16">
+                  <Badge className="bg-purple-100 text-purple-700 hover:bg-purple-200 transform hover:scale-105 transition-all duration-300">
+                    Our Technology
+                  </Badge>
+                  <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
+                    Advanced Computer Vision Technologies
+                  </h2>
+                  <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                    We leverage cutting-edge computer vision technologies and deep learning models 
+                    to deliver accurate, real-time visual analysis solutions.
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                  {[
+                    {
+                      title: "Deep Learning Models",
+                      description: "CNN, R-CNN, YOLO, and custom neural networks for object detection and classification",
+                      icon: Brain
+                    },
+                    {
+                      title: "Image Processing",
+                      description: "Advanced algorithms for image enhancement, filtering, and feature extraction",
+                      icon: Image
+                    },
+                    {
+                      title: "Real-time Processing",
+                      description: "Optimized systems for live video analysis and instant decision making",
+                      icon: Zap
+                    },
+                    {
+                      title: "Edge Computing",
+                      description: "Deploy computer vision models on edge devices for low-latency applications",
+                      icon: Monitor
+                    }
+                  ].map((tech, index) => (
+                    <div key={index} className="text-center space-y-4 group transform hover:scale-105 transition-all duration-300">
+                      <div className="w-16 h-16 bg-gradient-to-br from-green-100 to-blue-100 rounded-full flex items-center justify-center mx-auto group-hover:scale-125 group-hover:rotate-12 transition-all duration-500">
+                        <tech.icon className="h-8 w-8 text-green-600" />
+                      </div>
+                      <h3 className="text-xl font-semibold text-gray-900">{tech.title}</h3>
+                      <p className="text-gray-600">{tech.description}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* Process Section */}
+            <section className="py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+              <div className="absolute inset-0 pointer-events-none">
+                <div className="absolute top-20 left-1/4 w-36 h-36 bg-gradient-to-br from-green-200/20 to-blue-200/20 rounded-full blur-2xl animate-pulse" />
+                <div className="absolute bottom-20 right-1/4 w-28 h-28 bg-gradient-to-br from-purple-200/20 to-green-200/20 rounded-full blur-xl animate-pulse" />
+              </div>
+
+              <div className="max-w-7xl mx-auto relative z-10">
+                <div className="text-center space-y-4 mb-16">
+                  <Badge className="bg-blue-100 text-blue-700 hover:bg-blue-200 transform hover:scale-105 transition-all duration-300">
+                    Our Process
+                  </Badge>
+                  <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
+                    How We Build Your Computer Vision Solution
+                  </h2>
+                  <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Our systematic approach ensures successful computer vision implementation 
+                    tailored to your specific visual analysis needs.
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                  {[
+                    {
+                      step: "01",
+                      title: "Visual Analysis",
+                      description: "We analyze your visual data requirements and define computer vision objectives.",
+                      icon: Eye
+                    },
+                    {
+                      step: "02", 
+                      title: "Data Collection",
+                      description: "We gather and prepare image/video datasets for model training and validation.",
+                      icon: Camera
+                    },
+                    {
+                      step: "03",
+                      title: "Model Development",
+                      description: "We develop, train, and optimize computer vision models for your specific use case.",
+                      icon: Brain
+                    },
+                    {
+                      step: "04",
+                      title: "Deployment & Integration",
+                      description: "We deploy your CV solution and integrate it with your existing systems.",
+                      icon: Zap
+                    }
+                  ].map((phase, index) => (
+                    <div key={index} className="text-center space-y-4 group transform hover:scale-105 transition-all duration-300">
+                      <div className="w-16 h-16 bg-gradient-to-br from-green-100 to-blue-100 rounded-full flex items-center justify-center mx-auto group-hover:scale-125 group-hover:rotate-12 transition-all duration-500">
+                        <phase.icon className="h-8 w-8 text-green-600" />
+                      </div>
+                      <div className="text-2xl font-bold text-green-600">{phase.step}</div>
+                      <h3 className="text-xl font-semibold text-gray-900">{phase.title}</h3>
+                      <p className="text-gray-600">{phase.description}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* CTA Section */}
+            <section className="py-16 px-4 sm:px-6 lg:px-8 text-center bg-gradient-to-br from-green-600 to-blue-600 text-white relative overflow-hidden">
+              <div className="absolute inset-0 pointer-events-none">
+                <div className="absolute top-10 left-10 w-32 h-32 bg-white/10 rounded-full blur-xl animate-pulse" />
+                <div className="absolute bottom-10 right-10 w-24 h-24 bg-white/10 rounded-full blur-lg animate-pulse" />
+              </div>
+
+              <div className="max-w-4xl mx-auto relative z-10">
+                <h2 className="text-3xl sm:text-4xl font-bold mb-6">
+                  Ready to Give Your Business Vision?
+                </h2>
+                <p className="text-xl mb-8 opacity-90">
+                  Let's discuss how our computer vision solutions can transform your visual data into actionable insights.
+                </p>
+                <Button 
+                  size="lg" 
+                  className="bg-white text-green-600 hover:bg-gray-100 px-8 py-3 transform hover:scale-105 hover:shadow-lg transition-all duration-300"
+                  onClick={() => setShowContactDialog(true)}
+                >
+                  Start Your CV Journey
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </div>
+            </section>
           </div>
         </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 text-center bg-gradient-to-br from-green-600 to-blue-600 text-white relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-10 left-10 w-32 h-32 bg-white/10 rounded-full blur-xl animate-pulse" />
-          <div className="absolute bottom-10 right-10 w-24 h-24 bg-white/10 rounded-full blur-lg animate-pulse" />
-        </div>
-
-        <div className="max-w-4xl mx-auto relative z-10">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-            Ready to Give Your Business Vision?
-          </h2>
-          <p className="text-xl mb-8 opacity-90">
-            Let's discuss how our computer vision solutions can transform your visual data into actionable insights.
-          </p>
-          <Button 
-            size="lg" 
-            className="bg-white text-green-600 hover:bg-gray-100 px-8 py-3 transform hover:scale-105 hover:shadow-lg transition-all duration-300"
-            onClick={() => setShowContactDialog(true)}
-          >
-            Start Your CV Journey
-            <ArrowRight className="ml-2 h-5 w-5" />
-          </Button>
-        </div>
-      </section>
+      </main>
 
       <Footer />
 
