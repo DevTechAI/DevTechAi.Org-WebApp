@@ -26,51 +26,66 @@ const contactInfo = [
 const teamMembers = [
   {
     id: 1,
-    name: "Dr. Sarah Chen",
-    role: "Chief AI Officer",
+    name: "Khalid Md",
     image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face",
-    profileUrl: "https://linkedin.com/in/sarah-chen-ai",
-    description: "Leading AI research and innovation"
+    profileUrl: "https://www.linkedin.com/in/md-khalid-b3898a22b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    portfolioUrl: "https://wpportfolio.net/website-portfolio/"
   },
   {
     id: 2,
-    name: "Michael Rodriguez",
-    role: "Head of Engineering",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
-    profileUrl: "https://linkedin.com/in/michael-rodriguez-eng",
-    description: "Building scalable AI solutions"
+    name: "Sanjana Gunda",
+    image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face",
+    profileUrl: "https://www.linkedin.com/in/sanjana-gunda27/",
+    portfolioUrl: "https://wpportfolio.net/website-portfolio/"
   },
   {
     id: 3,
-    name: "Priya Sharma",
-    role: "Data Science Lead",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
-    profileUrl: "https://linkedin.com/in/priya-sharma-data",
-    description: "Transforming data into insights"
+    name: "Adithya Vardhan Reddy Y",
+    image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face",
+    profileUrl: "http://linkedin.com/in/y-adithya1617",
+    portfolioUrl: "https://wpportfolio.net/website-portfolio/"
   },
   {
     id: 4,
-    name: "David Kim",
-    role: "Product Manager",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
-    profileUrl: "https://linkedin.com/in/david-kim-product",
-    description: "Driving product strategy and growth"
+    name: "Sanskriti Sonee",
+    image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face",
+    profileUrl: "https://linkedin.com/in/sanskriti-sonee-749509266",
+    portfolioUrl: "https://wpportfolio.net/website-portfolio/"
   },
   {
     id: 5,
-    name: "Lisa Thompson",
-    role: "UX Design Director",
-    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&crop=face",
-    profileUrl: "https://linkedin.com/in/lisa-thompson-ux",
-    description: "Creating intuitive AI experiences"
+    name: "Yashashri Gudhe",
+    image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face",
+    profileUrl: "https://www.linkedin.com/in/gyashasri341?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    portfolioUrl: "https://wpportfolio.net/website-portfolio/"
   },
   {
     id: 6,
-    name: "Sixth Thompson",
-    role: "UX Design Director",
-    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&crop=face",
-    profileUrl: "https://linkedin.com/in/lisa-thompson-ux",
-    description: "Creating intuitive AI experiences"
+    name: "Selvarathinam G",
+    image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face",
+    profileUrl: "https://www.linkedin.com/in/selvarathinam-g-66863b298?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    portfolioUrl: "https://wpportfolio.net/website-portfolio/"
+  },
+  {
+    id: 7,
+    name: "Tharanidharane V ",
+    image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face",
+    profileUrl: "https://www.linkedin.com/in/tharanidharane-v-59b864290?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    portfolioUrl: "https://wpportfolio.net/website-portfolio/"
+  },
+  {
+    id: 8,
+    name: "Ramya Reddy N",
+    image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face",
+    profileUrl: "https://www.linkedin.com/in/ramya-reddy-28419028a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+    portfolioUrl: "https://wpportfolio.net/website-portfolio/"
+  },
+  {
+    id: 9,
+    name: "Nandeeshwar Gunda",
+    image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face",
+    profileUrl: "https://www.linkedin.com/in/nandeeshwar-gunda?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    portfolioUrl: "https://wpportfolio.net/website-portfolio/"
   }
 ];
 
@@ -205,7 +220,7 @@ export default function ContactSection() {
             <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-purple-100 transform hover:scale-105 hover:shadow-lg transition-all duration-500">
               <div className="rounded-lg overflow-hidden shadow-lg">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.1234567890123!2d78.3744!3d17.4478!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb91b5c5c5c5c5%3A0x5c5c5c5c5c5c5c5c!2sHitech%20City%2C%20Hyderabad%2C%20Telangana!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.1234567890123!2d78.3744!3d17.4478!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb91b5c5c5c5c5%3A0x5c5c5c5c5c5c5c5!2sHitech%20City%2C%20Hyderabad%2C%20Telangana!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin"
                   width="100%"
                   height="250"
                   style={{ border: 0 }}
@@ -273,53 +288,58 @@ export default function ContactSection() {
                             ? 'scale-75 opacity-60' 
                             : 'scale-50 opacity-30'
                       }`}>
-                        <div className="text-center space-y-4 group cursor-pointer" onClick={() => goToSlide(index)}>
-                          {/* Profile Image */}
-                          <div className="relative mx-auto">
-                            <div className={`mx-auto rounded-full overflow-hidden border-4 border-white shadow-2xl group-hover:scale-105 transition-all duration-500 ${
-                              isActive ? 'w-32 h-32' : 'w-24 h-24'
-                            }`}>
+                        <div className="text-center flex flex-col items-center group cursor-pointer" onClick={() => goToSlide(index)}>
+                          {/* Profile Image as Portfolio Link */}
+                          <div className="relative mx-auto aspect-square min-h-[8rem] flex items-center justify-center">
+                            <a
+                              href={member.portfolioUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className={`rounded-full overflow-hidden border-4 border-white shadow-2xl group-hover:scale-105 transition-all duration-500 ${
+                                isActive ? 'w-32 h-32' : 'w-24 h-24'
+                              }`}
+                              style={{ display: 'block' }}
+                            >
                               <img
                                 src={member.image}
                                 alt={member.name}
-                                className="w-full h-full object-cover"
+                                className="w-full h-full object-cover rounded-full"
                               />
-                            </div>
-                            {/* Hover overlay */}
-                            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-emerald-500/20 to-teal-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                              <ExternalLink className="h-6 w-6 text-white" />
-                            </div>
+                              {/* Hover overlay */}
+                              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-emerald-500/20 to-teal-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <ExternalLink className="h-6 w-6 text-white" />
+                              </div>
+                            </a>
                           </div>
 
                           {/* Member Info */}
-                          <div className="space-y-2">
+                          <div className="flex flex-col items-center gap-2 mt-4">
                             <h3 className={`font-bold text-gray-900 group-hover:text-emerald-600 transition-colors duration-300 ${
                               isActive ? 'text-xl' : 'text-lg'
                             }`}>
                               {member.name}
                             </h3>
-                            <p className={`font-semibold text-emerald-600 ${
-                              isActive ? 'text-lg' : 'text-base'
-                            }`}>
-                              {member.role}
-                            </p>
-                            <p className={`text-gray-600 max-w-xs mx-auto ${
-                              isActive ? 'text-sm' : 'text-xs'
-                            }`}>
-                              {member.description}
-                            </p>
-                            
-                            {/* Profile Link - Only show for active slide */}
                             {isActive && (
-                              <a
-                                href={member.profileUrl}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-flex items-center space-x-1 text-emerald-600 hover:text-emerald-700 font-medium transition-colors duration-300"
-                              >
-                                <span>View Profile</span>
-                                <ExternalLink className="h-4 w-4" />
-                              </a>
+                              <div className="flex flex-col items-center gap-2">
+                                <a
+                                  href={member.portfolioUrl}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="inline-flex items-center space-x-1 text-emerald-600 hover:text-emerald-700 font-medium transition-colors duration-300"
+                                >
+                                  <span>Portfolio</span>
+                                  <ExternalLink className="h-4 w-4" />
+                                </a>
+                                <a
+                                  href={member.profileUrl}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="inline-flex items-center space-x-1 text-blue-600 hover:text-blue-700 font-medium transition-colors duration-300"
+                                >
+                                  <span>LinkedIn</span>
+                                  <ExternalLink className="h-4 w-4" />
+                                </a>
+                              </div>
                             )}
                           </div>
                         </div>

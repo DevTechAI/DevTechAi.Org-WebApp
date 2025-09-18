@@ -14,9 +14,9 @@ export const metadata: Metadata = {
   title: 'DevTechAi.Org - Intelligent Software Solutions',
   description: 'Transform your business with cutting-edge AI software solutions. Machine learning, automation, and intelligent systems for modern enterprises.',
   icons: {
-    icon: '/devtechai-logo.png',
-    shortcut: '/devtechai-logo.png',
-    apple: '/devtechai-logo.png',
+    icon: '/Logo.png',
+    shortcut: '/Logo.png',
+    apple: '/Logo.png',
   },
 };
 
