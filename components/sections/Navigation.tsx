@@ -35,16 +35,16 @@ export default function Navigation({ activeSection, onScrollToSection }: Navigat
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [showBanner, setShowBanner] = useState(false);
 
-  // Detect Safari on iPhone
+  // Detect Safari on iPhone and Mac
   useEffect(() => {
-    const detectSafariOniPhone = () => {
+    const detectSafariOnAppleDevices = () => {
       if (typeof window === 'undefined') return false;
       const userAgent = window.navigator.userAgent;
-      const isIPhone = /iPhone/i.test(userAgent);
+      const isAppleDevice = /iPhone|Macintosh/i.test(userAgent);
       const isSafari = /Safari/i.test(userAgent) && !/Chrome/i.test(userAgent) && !/Firefox/i.test(userAgent);
-      return isIPhone && isSafari;
+      return isAppleDevice && isSafari;
     };
-    const shouldShowBanner = detectSafariOniPhone();
+    const shouldShowBanner = detectSafariOnAppleDevices();
     setShowBanner(shouldShowBanner);
     // Set CSS custom property for navigation height
     if (typeof window !== 'undefined') {
@@ -68,7 +68,7 @@ export default function Navigation({ activeSection, onScrollToSection }: Navigat
           <Marquee>
             <div className="flex items-center">
               <AlertTriangle className="h-5 w-5 mx-3 text-yellow-400" />
-              Safari on iPhone has limited compatibility — use Chrome/Firefox on iPhone or switch to Android, Mac, or Windows for best experience.
+              Safari has limited compatibility — use Chrome/Firefox for best experience across all devices.
               <AlertTriangle className="h-5 w-5 mx-3 text-yellow-400" />
             </div>
           </Marquee>
