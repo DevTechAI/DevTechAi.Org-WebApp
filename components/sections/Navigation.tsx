@@ -35,13 +35,26 @@ export default function Navigation({ activeSection, onScrollToSection }: Navigat
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [showBanner, setShowBanner] = useState(false);
 
-  // Detect Safari on iPhone and Mac
+  // Detect Safari browser specifically on iPhone and Mac devices
   useEffect(() => {
     const detectSafariOnAppleDevices = () => {
       if (typeof window === 'undefined') return false;
       const userAgent = window.navigator.userAgent;
+      
+      // Check if it's an Apple device
       const isAppleDevice = /iPhone|Macintosh/i.test(userAgent);
-      const isSafari = /Safari/i.test(userAgent) && !/Chrome/i.test(userAgent) && !/Firefox/i.test(userAgent);
+      
+      // Check if it's Safari by ensuring it has Safari but NOT any other browser identifiers
+      const hasSafari = /Safari/i.test(userAgent);
+      const hasChrome = /Chrome|CriOS|Chromium/i.test(userAgent);
+      const hasFirefox = /Firefox|FxiOS/i.test(userAgent);
+      const hasOpera = /Opera|OPR|OPiOS/i.test(userAgent);
+      const hasEdge = /Edge|EdgiOS|Edg/i.test(userAgent);
+      const hasOtherBrowser = /DuckDuckGo|Brave|Samsung|Vivaldi|Yandex/i.test(userAgent);
+      
+      // Only Safari if it has Safari identifier but none of the other browser identifiers
+      const isSafari = hasSafari && !hasChrome && !hasFirefox && !hasOpera && !hasEdge && !hasOtherBrowser;
+      
       return isAppleDevice && isSafari;
     };
     const shouldShowBanner = detectSafariOnAppleDevices();
