@@ -17,18 +17,50 @@ export default function Home() {
   useEffect(() => {
     const handleScroll = () => {
       const sections = ['home', 'services', 'about', 'contact'];
-      const current = sections.find(section => {
-        const element = document.getElementById(section);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          return rect.top <= 100 && rect.bottom >= 100;
+      let current = 'home'; // Default to home
+      
+      // Check if we're at the very top of the page
+      if (window.scrollY < 200) {
+        current = 'home';
+      } else {
+        // Find the section that's currently in view
+        const sectionInView = sections.find(section => {
+          const element = document.getElementById(section);
+          if (element) {
+            const rect = element.getBoundingClientRect();
+            return rect.top <= 100 && rect.bottom >= 100;
+          }
+          return false;
+        });
+        
+        if (sectionInView) {
+          current = sectionInView;
+        } else {
+          // If no section is in the viewport, find the closest one
+          let closestSection = 'home';
+          let closestDistance = Infinity;
+          
+          sections.forEach(section => {
+            const element = document.getElementById(section);
+            if (element) {
+              const rect = element.getBoundingClientRect();
+              const distance = Math.abs(rect.top);
+              if (distance < closestDistance) {
+                closestDistance = distance;
+                closestSection = section;
+              }
+            }
+          });
+          
+          current = closestSection;
         }
-        return false;
-      });
-      if (current) setActiveSection(current);
+      }
+      
+      setActiveSection(current);
     };
 
     window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Call immediately to set initial state
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 

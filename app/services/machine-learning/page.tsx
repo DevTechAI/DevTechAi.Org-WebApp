@@ -115,246 +115,240 @@ export default function MachineLearningPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-green-50">
-      <Navigation 
-        activeSection="services" 
-        onScrollToSection={() => {}} 
-      />
-      
-      {/* Hero Section */}
-      <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-purple-200/30 to-blue-200/30 rounded-full blur-xl animate-pulse" />
-          <div className="absolute top-40 right-20 w-24 h-24 bg-gradient-to-br from-green-200/30 to-purple-200/30 rounded-full blur-lg animate-pulse" />
-        </div>
-
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center space-y-8">
-            <div className="space-y-4">
-              <Badge className="bg-purple-100 text-purple-700 hover:bg-purple-200 transform hover:scale-105 transition-all duration-300">
-                <Brain className="w-4 h-4 mr-1" />
-                Machine Learning Solutions
-              </Badge>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-                Transform Your Business with{' '}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">
-                  Intelligent Automation
-                </span>
-              </h1>
-              <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
-                Leverage the power of machine learning to automate processes, predict outcomes, 
-                and unlock insights from your data. Our advanced ML solutions drive growth and efficiency.
-              </p>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                size="lg" 
-                className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-8 py-3 transform hover:scale-105 hover:shadow-lg transition-all duration-300"
-                onClick={() => setShowContactDialog(true)}
-              >
-                Get Started Today
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="border-purple-200 text-purple-700 hover:bg-purple-50 px-8 py-3 transform hover:scale-105 hover:shadow-lg transition-all duration-300"
-                onClick={() => document.getElementById('solutions')?.scrollIntoView({ behavior: 'smooth' })}
-              >
-                View Solutions
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Solutions Section */}
-      <section id="solutions" className="py-16 px-4 sm:px-6 lg:px-8 bg-white/50 relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-10 right-10 w-40 h-40 bg-gradient-to-br from-blue-200/20 to-purple-200/20 rounded-full blur-2xl animate-pulse" />
-          <div className="absolute bottom-10 left-10 w-32 h-32 bg-gradient-to-br from-green-200/20 to-blue-200/20 rounded-full blur-xl animate-pulse" />
-        </div>
-
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center space-y-4 mb-16">
-            <Badge className="bg-blue-100 text-blue-700 hover:bg-blue-200 transform hover:scale-105 transition-all duration-300">
-              Our ML Solutions
-            </Badge>
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
-              Comprehensive Machine Learning Services
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              From predictive analytics to intelligent automation, we provide end-to-end ML solutions 
-              that transform your business operations and drive measurable results.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {mlSolutions.map((solution, index) => (
-              <Card 
-                key={index} 
-                className="group hover:shadow-xl transition-all duration-500 hover:-translate-y-4 hover:rotate-1 border-0 bg-gradient-to-br from-white to-gray-50"
-              >
-                <CardHeader>
-                  <div className="w-12 h-12 bg-gradient-to-br from-purple-100 to-blue-100 rounded-lg flex items-center justify-center mb-4 group-hover:scale-125 group-hover:rotate-12 transition-all duration-500">
-                    <solution.icon className="h-6 w-6 text-purple-600" />
-                  </div>
-                  <CardTitle className="text-xl text-gray-900 group-hover:text-purple-700 transition-colors duration-300">
-                    {solution.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-gray-600 leading-relaxed mb-4">
-                    {solution.description}
-                  </CardDescription>
-                  <div className="space-y-2">
-                    <h4 className="text-sm font-semibold text-gray-900">Key Benefits:</h4>
-                    <ul className="space-y-1">
-                      {solution.benefits.map((benefit, i) => (
-                        <li key={i} className="flex items-center text-sm text-gray-600">
-                          <CheckCircle className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
-                          {benefit}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Industries Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-20 left-1/4 w-36 h-36 bg-gradient-to-br from-purple-200/20 to-blue-200/20 rounded-full blur-2xl animate-pulse" />
-          <div className="absolute bottom-20 right-1/4 w-28 h-28 bg-gradient-to-br from-green-200/20 to-purple-200/20 rounded-full blur-xl animate-pulse" />
-        </div>
-
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center space-y-4 mb-16">
-            <Badge className="bg-green-100 text-green-700 hover:bg-green-200 transform hover:scale-105 transition-all duration-300">
-              Industries We Serve
-            </Badge>
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
-              Transforming Industries with ML
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Our machine learning solutions are tailored to meet the unique challenges 
-              and opportunities across various industries.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {industries.map((industry, index) => (
-              <Card 
-                key={index} 
-                className="group hover:shadow-xl transition-all duration-500 hover:-translate-y-2 hover:rotate-1 border-0 bg-gradient-to-br from-white to-gray-50"
-              >
-                <CardHeader>
-                  <div className="text-4xl mb-4 group-hover:scale-125 transition-transform duration-300">
-                    {industry.icon}
-                  </div>
-                  <CardTitle className="text-xl text-gray-900 group-hover:text-purple-700 transition-colors duration-300">
-                    {industry.name}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-gray-600 leading-relaxed">
-                    {industry.description}
-                  </CardDescription>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Process Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-purple-50 to-blue-50 relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-10 right-10 w-40 h-40 bg-gradient-to-br from-blue-200/20 to-purple-200/20 rounded-full blur-2xl animate-pulse" />
-          <div className="absolute bottom-10 left-10 w-32 h-32 bg-gradient-to-br from-green-200/20 to-blue-200/20 rounded-full blur-xl animate-pulse" />
-        </div>
-
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center space-y-4 mb-16">
-            <Badge className="bg-purple-100 text-purple-700 hover:bg-purple-200 transform hover:scale-105 transition-all duration-300">
-              Our Process
-            </Badge>
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
-              How We Build Your ML Solution
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Our proven methodology ensures successful ML implementation from concept to deployment.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                step: "01",
-                title: "Discovery & Analysis",
-                description: "We analyze your data, understand your business goals, and identify ML opportunities.",
-                icon: FileText
-              },
-              {
-                step: "02", 
-                title: "Data Preparation",
-                description: "We clean, preprocess, and prepare your data for optimal ML model performance.",
-                icon: Database
-              },
-              {
-                step: "03",
-                title: "Model Development",
-                description: "We develop, train, and validate ML models tailored to your specific requirements.",
-                icon: Brain
-              },
-              {
-                step: "04",
-                title: "Deployment & Monitoring",
-                description: "We deploy your ML solution and provide ongoing monitoring and optimization.",
-                icon: Zap
-              }
-            ].map((phase, index) => (
-              <div key={index} className="text-center space-y-4 group transform hover:scale-105 transition-all duration-300">
-                <div className="w-16 h-16 bg-gradient-to-br from-purple-100 to-purple-200 rounded-full flex items-center justify-center mx-auto group-hover:scale-125 group-hover:rotate-12 transition-all duration-500">
-                  <phase.icon className="h-8 w-8 text-purple-600" />
-                </div>
-                <div className="text-2xl font-bold text-purple-600">{phase.step}</div>
-                <h3 className="text-xl font-semibold text-gray-900">{phase.title}</h3>
-                <p className="text-gray-600">{phase.description}</p>
+    <div className="bg-white text-gray-800">
+      <Navigation activeSection="services" onScrollToSection={() => {}} />
+      <main className="pt-nav">
+        <div className="relative bg-gradient-to-b from-blue-50 to-white pt-12 pb-16 text-center">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            {/* Hero Section */}
+            <section className="pb-16 relative overflow-hidden">
+              <div className="absolute inset-0 pointer-events-none">
+                <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-purple-200/30 to-blue-200/30 rounded-full blur-xl animate-pulse" />
+                <div className="absolute top-40 right-20 w-24 h-24 bg-gradient-to-br from-green-200/30 to-purple-200/30 rounded-full blur-lg animate-pulse" />
               </div>
-            ))}
+
+              <div className="text-center space-y-8">
+                <div className="space-y-4">
+                  <Badge className="bg-purple-100 text-purple-700 hover:bg-purple-200 transform hover:scale-105 transition-all duration-300">
+                    <Brain className="w-4 h-4 mr-1" />
+                    Machine Learning Solutions
+                  </Badge>
+                  <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+                    Transform Your Business with{' '}
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">
+                      Intelligent Automation
+                    </span>
+                  </h1>
+                  <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
+                    Leverage the power of machine learning to automate processes, predict outcomes, 
+                    and unlock insights from your data. Our advanced ML solutions drive growth and efficiency.
+                  </p>
+                </div>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Button 
+                    size="lg" 
+                    className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-8 py-3 transform hover:scale-105 hover:shadow-lg transition-all duration-300"
+                    onClick={() => setShowContactDialog(true)}
+                  >
+                    Get Started Today
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Button>
+                  <Button 
+                    size="lg" 
+                    variant="outline" 
+                    className="border-purple-200 text-purple-700 hover:bg-purple-50 px-8 py-3 transform hover:scale-105 hover:shadow-lg transition-all duration-300"
+                    onClick={() => document.getElementById('solutions')?.scrollIntoView({ behavior: 'smooth' })}
+                  >
+                    View Solutions
+                  </Button>
+                </div>
+              </div>
+            </section>
+
+            {/* Solutions Section */}
+            <section id="solutions" className="py-16 bg-white/50 relative overflow-hidden">
+              <div className="absolute inset-0 pointer-events-none">
+                <div className="absolute top-10 right-10 w-40 h-40 bg-gradient-to-br from-blue-200/20 to-purple-200/20 rounded-full blur-2xl animate-pulse" />
+                <div className="absolute bottom-10 left-10 w-32 h-32 bg-gradient-to-br from-green-200/20 to-blue-200/20 rounded-full blur-xl animate-pulse" />
+              </div>
+
+              <div className="text-center space-y-4 mb-16">
+                <Badge className="bg-blue-100 text-blue-700 hover:bg-blue-200 transform hover:scale-105 transition-all duration-300">
+                  Our ML Solutions
+                </Badge>
+                <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
+                  Comprehensive Machine Learning Services
+                </h2>
+                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                  From predictive analytics to intelligent automation, we provide end-to-end ML solutions 
+                  that transform your business operations and drive measurable results.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {mlSolutions.map((solution, index) => (
+                  <Card 
+                    key={index} 
+                    className="group hover:shadow-xl transition-all duration-500 hover:-translate-y-4 hover:rotate-1 border-0 bg-gradient-to-br from-white to-gray-50"
+                  >
+                    <CardHeader>
+                      <div className="w-12 h-12 bg-gradient-to-br from-purple-100 to-blue-100 rounded-lg flex items-center justify-center mb-4 group-hover:scale-125 group-hover:rotate-12 transition-all duration-500">
+                        <solution.icon className="h-6 w-6 text-purple-600" />
+                      </div>
+                      <CardTitle className="text-xl text-gray-900 group-hover:text-purple-700 transition-colors duration-300">
+                        {solution.title}
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <CardDescription className="text-gray-600 leading-relaxed mb-4">
+                        {solution.description}
+                      </CardDescription>
+                      <div className="space-y-2">
+                        <h4 className="text-sm font-semibold text-gray-900">Key Benefits:</h4>
+                        <ul className="space-y-1">
+                          {solution.benefits.map((benefit, i) => (
+                            <li key={i} className="flex items-center text-sm text-gray-600">
+                              <CheckCircle className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
+                              {benefit}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </section>
+
+            {/* Industries Section */}
+            <section className="py-16 relative overflow-hidden">
+              <div className="absolute inset-0 pointer-events-none">
+                <div className="absolute top-20 left-1/4 w-36 h-36 bg-gradient-to-br from-purple-200/20 to-blue-200/20 rounded-full blur-2xl animate-pulse" />
+                <div className="absolute bottom-20 right-1/4 w-28 h-28 bg-gradient-to-br from-green-200/20 to-purple-200/20 rounded-full blur-xl animate-pulse" />
+              </div>
+
+              <div className="text-center space-y-4 mb-16">
+                <Badge className="bg-green-100 text-green-700 hover:bg-green-200 transform hover:scale-105 transition-all duration-300">
+                  Industries We Serve
+                </Badge>
+                <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
+                  Transforming Industries with ML
+                </h2>
+                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                  Our machine learning solutions are tailored to meet the unique challenges 
+                  and opportunities across various industries.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {industries.map((industry, index) => (
+                  <Card 
+                    key={index} 
+                    className="group hover:shadow-xl transition-all duration-500 hover:-translate-y-2 hover:rotate-1 border-0 bg-gradient-to-br from-white to-gray-50"
+                  >
+                    <CardHeader>
+                      <div className="text-4xl mb-4 group-hover:scale-125 transition-transform duration-300">
+                        {industry.icon}
+                      </div>
+                      <CardTitle className="text-xl text-gray-900 group-hover:text-purple-700 transition-colors duration-300">
+                        {industry.name}
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <CardDescription className="text-gray-600 leading-relaxed">
+                        {industry.description}
+                      </CardDescription>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </section>
+
+            {/* Process Section */}
+            <section className="py-16 bg-gradient-to-br from-purple-50 to-blue-50 relative overflow-hidden">
+              <div className="absolute inset-0 pointer-events-none">
+                <div className="absolute top-10 right-10 w-40 h-40 bg-gradient-to-br from-blue-200/20 to-purple-200/20 rounded-full blur-2xl animate-pulse" />
+                <div className="absolute bottom-10 left-10 w-32 h-32 bg-gradient-to-br from-green-200/20 to-blue-200/20 rounded-full blur-xl animate-pulse" />
+              </div>
+
+              <div className="text-center space-y-4 mb-16">
+                <Badge className="bg-purple-100 text-purple-700 hover:bg-purple-200 transform hover:scale-105 transition-all duration-300">
+                  Our Process
+                </Badge>
+                <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
+                  How We Build Your ML Solution
+                </h2>
+                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                  Our proven methodology ensures successful ML implementation from concept to deployment.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                {[
+                  {
+                    step: "01",
+                    title: "Discovery & Analysis",
+                    description: "We analyze your data, understand your business goals, and identify ML opportunities.",
+                    icon: FileText
+                  },
+                  {
+                    step: "02", 
+                    title: "Data Preparation",
+                    description: "We clean, preprocess, and prepare your data for optimal ML model performance.",
+                    icon: Database
+                  },
+                  {
+                    step: "03",
+                    title: "Model Development",
+                    description: "We develop, train, and validate ML models tailored to your specific requirements.",
+                    icon: Brain
+                  },
+                  {
+                    step: "04",
+                    title: "Deployment & Monitoring",
+                    description: "We deploy your ML solution and provide ongoing monitoring and optimization.",
+                    icon: Zap
+                  }
+                ].map((phase, index) => (
+                  <div key={index} className="text-center space-y-4 group transform hover:scale-105 transition-all duration-300">
+                    <div className="w-16 h-16 bg-gradient-to-br from-purple-100 to-purple-200 rounded-full flex items-center justify-center mx-auto group-hover:scale-125 group-hover:rotate-12 transition-all duration-500">
+                      <phase.icon className="h-8 w-8 text-purple-600" />
+                    </div>
+                    <div className="text-2xl font-bold text-purple-600">{phase.step}</div>
+                    <h3 className="text-xl font-semibold text-gray-900">{phase.title}</h3>
+                    <p className="text-gray-600">{phase.description}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* CTA Section */}
+            <section className="py-16 text-center bg-gradient-to-br from-purple-600 to-blue-600 text-white relative overflow-hidden">
+              <div className="absolute inset-0 pointer-events-none">
+                <div className="absolute top-10 left-10 w-32 h-32 bg-white/10 rounded-full blur-xl animate-pulse" />
+                <div className="absolute bottom-10 right-10 w-24 h-24 bg-white/10 rounded-full blur-lg animate-pulse" />
+              </div>
+
+              <div className="max-w-4xl mx-auto relative z-10">
+                <h2 className="text-3xl sm:text-4xl font-bold mb-6">
+                  Ready to Transform Your Business with Machine Learning?
+                </h2>
+                <p className="text-xl mb-8 opacity-90">
+                  Let's discuss how our ML solutions can drive growth and efficiency in your organization.
+                </p>
+                <Button 
+                  size="lg" 
+                  className="bg-white text-purple-600 hover:bg-gray-100 px-8 py-3 transform hover:scale-105 hover:shadow-lg transition-all duration-300"
+                  onClick={() => setShowContactDialog(true)}
+                >
+                  Start Your ML Journey
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </div>
+            </section>
           </div>
         </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 text-center bg-gradient-to-br from-purple-600 to-blue-600 text-white relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-10 left-10 w-32 h-32 bg-white/10 rounded-full blur-xl animate-pulse" />
-          <div className="absolute bottom-10 right-10 w-24 h-24 bg-white/10 rounded-full blur-lg animate-pulse" />
-        </div>
-
-        <div className="max-w-4xl mx-auto relative z-10">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-            Ready to Transform Your Business with Machine Learning?
-          </h2>
-          <p className="text-xl mb-8 opacity-90">
-            Let's discuss how our ML solutions can drive growth and efficiency in your organization.
-          </p>
-          <Button 
-            size="lg" 
-            className="bg-white text-purple-600 hover:bg-gray-100 px-8 py-3 transform hover:scale-105 hover:shadow-lg transition-all duration-300"
-            onClick={() => setShowContactDialog(true)}
-          >
-            Start Your ML Journey
-            <ArrowRight className="ml-2 h-5 w-5" />
-          </Button>
-        </div>
-      </section>
+      </main>
 
       <Footer />
 
